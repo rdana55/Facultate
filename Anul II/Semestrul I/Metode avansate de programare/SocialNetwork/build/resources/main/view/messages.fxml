@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkmap.controller.MessageController">
+   <children>
+      <TableView fx:id="friendsTableView" layoutX="0.0" prefHeight="348.0" prefWidth="190.0">
+         <columns>
+            <TableColumn fx:id="friendNameColumn" prefWidth="190.0" text="FRIENDS" />
+         </columns>
+      </TableView>
+
+      <ListView fx:id="textListView" layoutX="190.0" layoutY="25.0" prefHeight="323.0" prefWidth="394.0" />
+      <TextField fx:id="messageTextField" layoutX="190.0" layoutY="348.0" prefHeight="52.0" prefWidth="339.0" />
+      <Button fx:id="sendButton" layoutX="529.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleSentMessage" prefHeight="52.0" prefWidth="72.0" text="SEND">
+         <font>
+            <Font name="Rockwell" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="538.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="24.0" prefWidth="62.0" text="Search">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchTextField" layoutX="389.0" layoutY="1.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button fx:id="forwardButton" layoutY="348.0" mnemonicParsing="false" onAction="#handleForwardMessage" prefHeight="25.0" prefWidth="190.0" text="FORWARD">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="replyButton" layoutX="190.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleReplyMessage" prefHeight="25.0" prefWidth="52.0" text="Reply">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <ScrollBar fx:id="pageMsg" layoutX="579.0" layoutY="25.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="21.0" />
+      <Button layoutY="374.0" mnemonicParsing="false" onAction="#handleRequests" prefHeight="25.0" prefWidth="90.0" text="Requests">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="90.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleSendRequest" prefHeight="25.0" prefWidth="100.0" text="Send request">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

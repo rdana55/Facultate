@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkmap.controller.FriendshipRequestsController">
+    <children>
+        <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <TableView prefHeight="334.0" prefWidth="508.0" BorderPane.alignment="CENTER" fx:id="requestsTableView">
+                    <columns>
+                        <TableColumn prefWidth="300.0" text="CERERE" fx:id="senderColumn"/>
+                        <TableColumn prefWidth="300.0" text="STATUS" fx:id="statusColumn"/>
+                    </columns>
+                </TableView>
+            </center>
+         <bottom>
+            <MenuButton mnemonicParsing="false" text="RASPUNDE" BorderPane.alignment="CENTER">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleAcceptRequest" text="ACCEPTA" />
+                <MenuItem mnemonicParsing="false" onAction="#handleRejectRequest" text="RESPINGE" />
+              </items>
+            </MenuButton>
+         </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f8f4ff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkmap.controller.UserController">
+    <children>
+        <TableView fx:id="tableView" layoutX="93.0" layoutY="38.0" prefHeight="319.0" prefWidth="488.0" style="-fx-background-color: #e6e6fa;" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="38.0">
+            <columns>
+                <TableColumn fx:id="idColumn" minWidth="7.0" prefWidth="52.0" style="-fx-background-color: #c4c3d0;" text="ID" />
+                <TableColumn fx:id="fnColumn" prefWidth="85.0" style="-fx-background-color: #c4c3d0;" text="Firstname" />
+                <TableColumn fx:id="snColumn" prefWidth="85.0" style="-fx-background-color: #c4c3d0;" text="Surname" />
+                <TableColumn fx:id="friends" prefWidth="282.33331298828125" style="-fx-background-color: #c4c3d0;" text="Friends" />
+            </columns>
+        </TableView>
+        <Label layoutX="260.0" layoutY="1.0" prefHeight="30.0" prefWidth="178.0" text="              USERS" textAlignment="CENTER">
+            <font>
+                <Font name="Rockwell" size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleAddUser" prefHeight="31.0" prefWidth="67.0" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3px;" text="ADD">
+            <font>
+                <Font name="Rockwell" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleDeleteUser" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3px;" text="DELETE">
+            <font>
+                <Font name="Rockwell" size="12.0" />
+            </font>
+        </Button>
+        <Button layoutX="14.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleUpdateUser" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3PX;" text="UPDATE">
+            <font>
+                <Font name="Rockwell" size="12.0" />
+            </font>
+        </Button>
+      <Button layoutX="289.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleRequests" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3PX;" text="REQUESTS">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="479.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleSendRequest" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3PX;" text="SEND REQUEST">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="93.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleMessages" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #fff0f5; -fx-border-color: #ccccff; -fx-border-width: 3PX;" text="MESSAGES">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <ScrollBar fx:id="pageScrollBar" layoutX="578.0" layoutY="38.0" orientation="VERTICAL" prefHeight="319.0" prefWidth="15.0" />
+    </children>
+</AnchorPane>
