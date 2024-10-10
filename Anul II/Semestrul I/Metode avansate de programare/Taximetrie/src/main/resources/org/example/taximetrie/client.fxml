@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.taximetrie.controller.ClientController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="29.0" layoutY="32.0" text="Cauta cursa" />
+            <TextField fx:id="locatie" layoutX="29.0" layoutY="59.0" />
+            <Button fx:id="cauta" layoutX="29.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleCautaButtonAction" text="Cauta" />
+            <Label layoutX="29.0" layoutY="200.0" text="Cursa ta" />
+            <Label layoutX="29.0" layoutY="232.0" text="Timp de asteptare: " />
+            <Label layoutX="29.0" layoutY="261.0" text="Indicativul masinii: " />
+            <Label fx:id="timp" layoutX="157.0" layoutY="232.0" />
+            <Label fx:id="indicativ" layoutX="157.0" layoutY="261.0" />
+            <Button fx:id="accept" layoutX="366.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleAcceptButton" text="accept" />
+            <Button fx:id="cancel" layoutX="366.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleCancelButton" text="cancel" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

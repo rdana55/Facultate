@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.taximetrie.controller.TaximetristController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ListView fx:id="comenzi" layoutY="36.0" prefHeight="273.0" prefWidth="200.0" />
+            <Label layoutX="1.0" layoutY="324.0" prefHeight="17.0" prefWidth="206.0" text="Timp maxim de asteptare pentru client" />
+            <TextField fx:id="timp" layoutX="1.0" layoutY="341.0" />
+            <Button fx:id="onoreaza" layoutX="1.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleOnoreazaButtonAction" text="Onoreaza comanda" />
+            <Label layoutX="367.0" layoutY="14.0" prefHeight="17.0" prefWidth="101.0" text="Clienti onorati" />
+            <DatePicker fx:id="data" layoutX="300.0" layoutY="277.0" onAction="#handleDataButtonAction" />
+            <Button fx:id="medieComenzi" layoutX="300.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleMedie" text="Media comenzilor din ultimele 3 luni" />
+            <Button fx:id="clientFidel" layoutX="300.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleClientFidel" text="Cel mai fidel client" />
+            <TableView fx:id="clientiOnorati" layoutX="300.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="clientiOnoratiColumn" prefWidth="198.66665649414062" text="Clienti onorati" />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_prev" layoutX="300.0" layoutY="236.0" mnemonicParsing="false" onAction="#handlePrec" text="prev" />
+            <Button fx:id="btn_next" layoutX="449.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleNext" text="next" />
+            <TextField fx:id="txt_pagina" layoutX="339.0" layoutY="236.0" prefHeight="25.0" prefWidth="113.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
