@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkmap.controller.HelloController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="216.0" layoutY="23.0" prefHeight="42.0" prefWidth="142.0" text="Bine ai venit!">
+               <font>
+                  <Font name="Gabriola" size="35.0" />
+               </font>
+            </Label>
+            <Button fx:id="login" layoutX="73.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="180.0" text="Intra in contul tau">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="create" layoutX="332.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleCreate" prefHeight="25.0" prefWidth="180.0" text="Creeaza un cont nou">
+               <font>
+                  <Font name="Rockwell" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="190.0" fitWidth="441.0" layoutX="70.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

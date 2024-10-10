@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkmap.controller.EditUserController">
+   <children>
+      <TextField fx:id="fnTextField" layoutX="196.0" layoutY="113.0" prefHeight="25.0" prefWidth="202.0" />
+      <Label layoutX="80.0" layoutY="117.0" text="Prenume">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="169.0" text="Nume">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font></Label>
+      <Button layoutX="372.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="297.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="24.0" prefWidth="55.0" text="Save">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="330.0" fitWidth="318.0" layoutX="61.0" layoutY="34.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../com/example/socialnetworkmap/images/user.jpeg" />
+         </image></ImageView>
+      <TextField fx:id="snTextField" layoutX="196.0" layoutY="164.0" prefHeight="25.0" prefWidth="202.0" />
+      <Label layoutX="80.0" layoutY="225.0" prefHeight="16.0" prefWidth="50.0" text="Parola">
+         <font>
+            <Font name="Rockwell" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="psTextField" layoutX="196.0" layoutY="220.0" prefHeight="25.0" prefWidth="202.0" />
+   </children>
+</AnchorPane>
