@@ -1,0 +1,28 @@
+D:\Universitait\MAP\Labs\Lab13\Lab13\bin\Debug\net8.0\Lab13.exe
+D:\Universitait\MAP\Labs\Lab13\Lab13\bin\Debug\net8.0\Lab13.deps.json
+D:\Universitait\MAP\Labs\Lab13\Lab13\bin\Debug\net8.0\Lab13.runtimeconfig.json
+D:\Universitait\MAP\Labs\Lab13\Lab13\bin\Debug\net8.0\Lab13.dll
+D:\Universitait\MAP\Labs\Lab13\Lab13\bin\Debug\net8.0\Lab13.pdb
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.AssemblyInfoInputs.cache
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.AssemblyInfo.cs
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.csproj.CoreCompileInputs.cache
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.dll
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\refint\Lab13.dll
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.pdb
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\Lab13.genruntimeconfig.cache
+D:\Universitait\MAP\Labs\Lab13\Lab13\obj\Debug\net8.0\ref\Lab13.dll
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\bin\Debug\net8.0\Lab13.exe
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\bin\Debug\net8.0\Lab13.deps.json
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\bin\Debug\net8.0\Lab13.runtimeconfig.json
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\bin\Debug\net8.0\Lab13.dll
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\bin\Debug\net8.0\Lab13.pdb
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.AssemblyInfoInputs.cache
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.AssemblyInfo.cs
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.csproj.CoreCompileInputs.cache
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.dll
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\refint\Lab13.dll
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.pdb
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\Lab13.genruntimeconfig.cache
+C:\Users\Dana Rusu\Desktop\Lab13\Lab13\obj\Debug\net8.0\ref\Lab13.dll
