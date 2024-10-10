@@ -1,0 +1,62 @@
+%Sa se scrie un predicat care elimina dintr-o lista toate elementele
+% care se repeta.
+
+%nrApEl(L:lista, E:element, R:int)
+%model flux (i,i,o)
+%L: lista in care cautam nr aparitiilor elementului E
+%E: el. ale carui aparitii le numaram
+%R: nr. de aparitii ale lui E in L
+nrApEl([],_,0).
+nrApEl([H|T],E,R):-H=E,
+	nrApEl(T,E,R1),
+	R is R1+1.
+nrApEl([H|T],E,R):-(H\=E),
+	nrApEl(T,E,R).
+
+%elimina(L:lista, M:lista, Lrez: lista)
+%modelul de flux (i,i,o)
+%L: lista de numere
+%M: copie a listei de numere
+%Lrez: lista cu rezultatul dorit
+elimina([],_,[]).
+elimina([H|T],M,[H|Lrez]):-nrApEl(M,H,Ap),
+	Ap=:=1,
+	!,
+	elimina(T,M,Lrez).
+elimina([_|T], M, Lrez):-elimina(T,M,Lrez).
+
+elimina_pp(L,Lrez):-elimina(L,L,Lrez).
+
+
+% Sa se elimine toate aparitiile elementului maxim dintr-o lista de
+% numere intregi.
+
+%elMax(L:lista, E:element)
+%model flux (i,o)
+%L: lista in care cautam elementul cu valoare maxima
+%E: elementul in care va ramane valoarea maxima
+elMax([X],X).
+elMax([H|T],E):-
+	elMax(T,Rez),
+	H>=Rez,
+	E = H.
+elMax([H|T],E):-
+	elMax(T,Rez),
+	H<Rez,
+	E = Rez.
+
+%eliminaM(E:element,L:lista,Lrez:lista)
+%model flux (i,i,o)
+%E: el. maxim
+%L: lista initiala
+%Lrez: lista fara elementele care aveau valoare maxima
+eliminaM(_,[],[]).
+eliminaM(E,[H|T], Lrez):-
+	E==H,
+	eliminaM(E,T,Lrez).
+eliminaM(E,[H|T],[H|Lrez]):-
+	eliminaM(E,T,Lrez).
+
+elMaxime(L,Rezultat):-
+	elMax(L,E),
+	eliminaM(E,L,Rezultat).

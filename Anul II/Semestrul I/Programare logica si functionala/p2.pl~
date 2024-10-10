@@ -1,0 +1,128 @@
+%Problema 1
+
+inversare([],[]).
+inversare(L,R):-
+	inv(L,[],R).
+
+inv([],R,R).
+inv([H|T],R,REZ):-
+	inv(T,[H|R],REZ).
+
+suma([],[],0,[]).
+suma([H],[],S,[R]):-
+	R is (H + S) mod 10.
+suma([],[H],S,[R]):-
+	R is (H + S) mod 10.
+suma([H1|T1], [], S, [H3|R]) :-
+    AUX1 is H1 + S,
+    H3 is AUX1 mod 10,
+    S1 is AUX1 // 10,
+    suma(T1,[], S1, R).
+suma([], [H2|T2], S, [H3|R]) :-
+    AUX1 is H2 + S,
+    H3 is AUX1 mod 10,
+    S1 is AUX1 // 10,
+    suma([], T2, S1, R).
+suma([H1|T1],[H2|T2],S,[H3|R]):-
+	AUX1 is H1 + H2 + S,
+	H3 is AUX1 mod 10,
+	S1 is AUX1 // 10,
+	suma(T1,T2,S1,R).
+
+main1(L1,L2,R):-
+	inversare(L1,R1),
+	inversare(L2,R2),
+	suma(R1,R2,0,R3),
+	inversare(R3,R).
+
+%Problema 11
+
+nrPrim(E,E).
+nrPrim(E,D):-
+	D < E,
+	E mod D =\= 0,
+	!,
+	D1 is D + 1,
+	nrPrim(E,D1).
+
+verificarePrim(E):-
+	E > 1,
+	nrPrim(E,2).
+
+dublarePrime([],[]).
+dublarePrime([H|T],[H,H|R]):-
+	verificarePrim(H),
+	!,
+	dublarePrime(T,R).
+dublarePrime([H|T],[H|R]):-
+	dublarePrime(T,R).
+
+main11(L,R):-
+	dublarePrime(L,R).
+
+%Problema 5
+
+elMax([X],X).
+elMax([H|T],E):-
+	elMax(T,Rez),
+	H >= Rez,
+	E = H.
+elMax([H|T],E):-
+	elMax(T,Rez),
+	H < Rez,
+	E = Rez.
+
+pozNrMax([],_,_,[]).
+pozNrMax([H|T],Poz,E,[Poz|R]):-
+	H = E,
+	!,
+	Poz1 is Poz + 1,
+	pozNrMax(T,Poz1,E,R).
+pozNrMax([_|T],Poz,E,R):-
+	Poz1 is Poz +  1,
+	pozNrMax(T,Poz1,E,R).
+
+main5(L,R):-
+	elMax(L,E),
+	pozNrMax(L,1,E,R).
+
+%Problema 3
+
+isMin([X],X).
+isMin([H|T],E):-
+	isMin(T,Res),
+	H =< Res,
+	E = H.
+isMin([H|T],E):-
+	isMin(T,Res),
+	H > Res,
+	E = Res.
+
+adaugaFinal(E,[],[E]).
+adaugaFinal(E,[H|T],[H|R]):-
+	adaugaFinal(E,T,R).
+
+sortare([],[]).
+sortare([X],[X]).
+sortare([H|T],[H|R]):-
+	isMin([H|T],E),
+	H =< E,
+	!,
+	sortare(T,R).
+sortare([H|T],R):-
+	adaugaFinal(H,T,Rez),
+	sortare(Rez,R),
+	!.
+
+eliminaD([],[]).
+eliminaD([E],[E]).
+eliminaD([H|[H1|T]],[H|R]):-
+	H =\= H1,
+	!,
+	eliminaD([H1|T],R).
+eliminaD([_|T],R):-
+	eliminaD(T,R).
+
+main3(L,R):-
+	sortare(L,Rez),
+	eliminaD(Rez,R).

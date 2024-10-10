@@ -1,0 +1,56 @@
+%elMin(L: lista, E: element)
+%model de flux (i,o)
+%L: lista in care cautam
+%E: elementul cu valoarea minima
+
+elMin([X],X).
+elMin([H|T],E):-
+	elMin(T,Rez),
+	H=<Rez,
+	E=H.
+elMin([H|T],E):-
+	elMin(T,Rez),
+	H>Rez,
+	E=Rez.
+
+%adF(E: element, L: lista, Rez: lista)
+%model de flux (i,i,o)
+%E: elementul pe care il adaugam la final
+%L: lista la finalul careia adaugam elementul
+%Rez: lista rezultata
+
+adF(X,[],[X]).
+adF(E,[H|T], [H|Rez]):-
+	adF(E,T,Rez).
+
+%sortare(L: lista, Lrez:lista)
+%model de flux (i,o)
+%L: lista initiala, pe care o sortam
+%Lrez: lista dupa sortare
+
+sortare([],[]).
+sortare([X],[X]).
+sortare([H|[HH|T]],[H|Lrez]):-
+	elMin([HH|T],Rez),
+	H=<Rez,
+	!,
+	sortare([HH|T],Lrez).
+sortare([H|T], Lrez):-
+	adF(H,T,RezNou),
+	sortare(RezNou,Lrez),
+	!.
+
+%listaEterogenaSortata(L: lista eterogena, R:lista eterogena)
+%model de flux (i,o)
+%L: lista initiala
+%R: lista rezultata, cu sublistele sortate
+
+listaEterogenaSortata([],[]).
+listaEterogenaSortata([X],X).
+listaEterogenaSortata([H|T],[RH|R]):-
+	is_list(H),
+	!,
+	sortare(H,RH),
+	listaEterogenaSortata(T,R).
+listaEterogenaSortata([H|T],[H|R]):-
+	listaEterogenaSortata(T,R).

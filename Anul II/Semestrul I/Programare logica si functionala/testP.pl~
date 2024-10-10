@@ -1,0 +1,27 @@
+contains([E],E).
+contains([H|_],E):-
+	H = E,
+	!.
+contains([_|T],E):-
+	contains(T,E).
+
+invers(L,R):-
+	inv(L,[],R).
+
+inv([],R,R).
+inv([H|T],R,Rez):-
+	inv(T,[H|R],Rez).
+
+multime([],[]).
+multime([X],X).
+multime([H|T],R):-
+	contains(T,H),
+	!,
+	multime(T,R).
+multime([H|T],[H|R]):-
+	multime(T,R).
+
+main(L,R):-
+	invers(L,R1),
+	multime(R1,R2),
+	invers(R2,R).

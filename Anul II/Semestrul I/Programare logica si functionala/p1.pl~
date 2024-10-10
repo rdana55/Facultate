@@ -1,0 +1,225 @@
+%Problema 1a
+
+contains([H|_],E):-
+	H = E,
+	!.
+contains([_|T],E):-
+	contains(T,E).
+
+scadere([],_,[]).
+scadere([H|T],L2,R):-
+	contains(L2,H),
+	!,
+	scadere(T,L2,R).
+scadere([H|T],L2,[H|R]):-
+	scadere(T,L2,R).
+
+main1a(L1,L2,R):-
+	scadere(L1,L2,R).
+
+%Problema 1b
+
+generarePar([],[]).
+generarePar([H|T],[H|[1|R]]):-
+	H mod 2 =:= 0,
+	!,
+	generarePar(T,R).
+generarePar([H|T],[H|R]):-
+	generarePar(T,R).
+
+main1b(L,R):-
+	generarePar(L,R).
+
+%Problema 2a
+
+cmmdc(0,E,E).
+cmmdc(E,0,E).
+cmmdc(E,E,E).
+cmmdc(E1,E2,R):-
+	E1>E2,
+	!,
+	AUX is E1-E2,
+	cmmdc(AUX,E2,R).
+cmmdc(E1,E2,R):-
+	AUX is E2-E1,
+	cmmdc(E1,AUX,R).
+
+cmmmc(E1,E2,R):-
+	cmmdc(E1,E2,R1),
+	R is E1*E2/R1.
+
+lista([],_).
+lista([E],E).
+lista([H1,H2|T],R):-
+	cmmmc(H1,H2,R1),
+	lista([R1|T],R).
+
+main2a(L,R):-
+	lista(L,R).
+
+%Problema 2b
+
+putere(0).
+putere(1).
+putere(X):-
+	X mod 2 =:= 0,
+	X1 is X/2,
+	putere(X1).
+
+interclasare([],_,_,[]).
+interclasare([H|T],PozAct,E,[E,H|R]):-
+	putere(PozAct),
+	!,
+	PozAct1 is PozAct+1,
+	interclasare(T,PozAct1,E,R).
+interclasare([H|T],PozAct,E,[H|R]):-
+	PozAct1 is PozAct+1,
+	interclasare(T,PozAct1,E,R).
+
+main2b(L,E,R):-
+	interclasare(L,0,E,R).
+
+%Problema 3a
+
+%contains([H|_],E):-
+%H=E,
+%!.
+%contains([_|T],E):-
+%contains(T,E).
+
+multime([],_,[]).
+multime([H|T],C,R):-
+	contains(C,H),
+	!,
+	multime(T,C,R).
+multime([H|T],C,[H|R]):-
+	multime(T,[H|C],R).
+
+main3a(L,R):-
+	multime(L,[],R).
+
+%Problema 3b
+
+isPar(E):-
+	E mod 2 =:= 0.
+
+inversare([],[]).
+inversare(L,R):-
+	inv(L,[],R).
+
+inv([],R,R).
+inv([H|T],R,Rez):-
+	inv(T,[H|R],Rez).
+
+parImpar([],P,I,NrP,NrI):-
+	inversare(P,PB),
+	write('Lista nr pare: '),writeln(PB),
+	inversare(I,IB),
+	write('Lista nr impare: '),writeln(IB),
+	write('Nr numere pare: '),writeln(NrP),
+	write('Nr numere impare: '),writeln(NrI).
+
+parImpar([H|T],P,I,NrP,NrI):-
+	isPar(H),
+	!,
+	NrP1 is NrP + 1,
+	parImpar(T,[H|P],I,NrP1,NrI).
+
+parImpar([H|T],P,I,NrP,NrI):-
+	NrI1 is NrI + 1,
+	parImpar(T,P,[H|I],NrP,NrI1).
+
+main3b(L):-
+	parImpar(L,[],[],0,0).
+
+%Problema 4a
+
+substituire([],_,_,[]).
+substituire([H|T],E,LI,[LI|R]):-
+	H = E,
+	!,
+	substituire(T,E,LI,R).
+substituire([H|T],E,LI,[H|R]):-
+	substituire(T,E,LI,R).
+
+main4a(L,E,LI,R):-
+	substituire(L,E,LI,R).
+
+%Problema 4b
+
+eliminarePoz([],_,_,[]).
+eliminarePoz([_|T],N,Poz,R):-
+	N = Poz,
+	!,
+	Poz1 is Poz + 1,
+	eliminarePoz(T,N,Poz1,R).
+eliminarePoz([H|T],N,Poz,[H|R]):-
+	Poz1 is Poz + 1,
+	eliminarePoz(T,N,Poz1,R).
+
+main4b(L,N,R):-
+	eliminarePoz(L,N,1,R).
+
+%Problema 5a
+
+stergeElement([],_,[]).
+stergeElement([H|T],E,R):-
+	H = E,
+	!,
+	stergeElement(T,E,R).
+stergeElement([H|T],E,[H|R]):-
+	stergeElement(T,E,R).
+
+main5a(L,E,R):-
+	stergeElement(L,E,R).
+
+%Problema 5b
+
+nrAparitii([],_,0).
+nrAparitii([H|T],E,R):-
+	H = E,
+	!,
+	nrAparitii(T,E,R1),
+	R is R1 + 1.
+nrAparitii([_|T],E,R):-
+	nrAparitii(T,E,R).
+
+atomN([],[]).
+atomN([H|T],[[H,Nr]|R]):-
+	nrAparitii([H|T],H,Nr),
+	stergeElement(T,H,Rez),
+	atomN(Rez,R).
+
+main5b(L,R):-
+	atomN(L,R).
+
+%Problema 11a
+
+vale([],[]).
+vale([H,H1|T],R):-
+	H > H1,
+	!,
+	vale([H1|T],[0|R]).
+vale([H,H1|T],R):-
+	H < H1,
+	!,
+	vale([H1|T],[1|R]).
+vale([H,H1|T],R):-
+	H = H1,
+	!,
+	vale([H1|T],[2|R]).
+
+
+ver([],X,X).
+ver([H,H1|T],NR,REZ):-
+	H =:= H1,
+	!,
+	ver([H1|T],NR,REZ).
+ver([_,H1|T],NR,REZ):-
+	REZ1 is NR + 1,
+	ver([H1|T],REZ1,REZ).
+
+aspectVale(L):-
+	vale(L,R),
+	ver(R,0,REZ),
+	REZ = 1.
