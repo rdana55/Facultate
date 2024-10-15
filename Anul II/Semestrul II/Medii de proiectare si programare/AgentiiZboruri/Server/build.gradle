@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'AgentiiZboruri'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    //mainModule = 'ro.iss.clientfx'
+    mainClass = 'ro.server.StartRpcServer'
+}
+
+apply plugin: 'java'
+
+/*jar {
+    from sourceSets.main.output
+}*/
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation project(':Model')
+    implementation project(':Services')
+    implementation project(':Networking')
+    implementation project(':Persistence')
+}
