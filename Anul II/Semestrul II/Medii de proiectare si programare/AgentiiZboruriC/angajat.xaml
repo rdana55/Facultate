@@ -1,0 +1,22 @@
+﻿<Window x:Class="ro.mpp.agentiizboruri.controller.AngajatController"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Angajat" Height="400" Width="600">
+    <Grid>
+        <ComboBox x:Name="comboFrom" Width="150" Height="25" Margin="32,23,0,0" />
+        <ComboBox x:Name="comboTo" Width="150" Height="25" Margin="32,65,0,0" />
+        <DatePicker x:Name="dataFlight" Width="150" Height="25" Margin="20,111,0,0" />
+        <Button x:Name="btn_Search" Content="Search" Width="75" Height="25" Margin="81,154,0,0" Click="HandleSearch" />
+        <DataGrid x:Name="tabelZboruri" Width="334" Height="296" Margin="233,24,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="columnPlecare" Width="75" Header="Plecare" />
+                <DataGridTextColumn x:Name="columnSosire" Width="75" Header="Sosire" />
+                <DataGridTextColumn x:Name="columnLocuri" Width="121" Header="Data/Ora" />
+                <DataGridTextColumn x:Name="columnOcupate" Width="44" Header="Locuri" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="cumpara" Content="Cumpara" Width="75" Height="25" Margin="32,280,0,0" Click="HandleCumpara" />
+        <TextBox x:Name="client" Width="150" Height="25" Margin="32,317,0,0" />
+        <Button x:Name="logoutButton" Content="Log Out" Width="75" Height="25" Margin="515,361,0,0" Click="HandleLogout" />
+    </Grid>
+</Window>
