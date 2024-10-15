@@ -1,4 +1,11 @@
-# 📚 Proiectele mele universitare
+# 📚 Facultate
+
+---
+
+## 🤝 Proiecte în echipă
+
+- [Hand Gesture Recognition](./Anul%20II/Semestrul%20I/Materie%201/)
+- [SpeedCatch](./Anul%20III/Semestrul%20I/Materie%202/)
 
 ---
 
@@ -9,10 +16,14 @@
   - [Materie 1](./Anul%20I/Semestrul%20I/Materie%201/)
   - [Materie 2](./Anul%20I/Semestrul%20I/Materie%202/)
   - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 - [Semestrul II](./Anul%20I/Semestrul%20II/)
   - [Materie 1](./Anul%20I/Semestrul%20II/Materie%201/)
   - [Materie 2](./Anul%20I/Semestrul%20II/Materie%202/)
   - [Materie 3](./Anul%20I/Semestrul%20II/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 
 ---
 
@@ -21,10 +32,14 @@
   - [Materie 1](./Anul%20II/Semestrul%20I/Materie%201/)
   - [Materie 2](./Anul%20II/Semestrul%20I/Materie%202/)
   - [Materie 3](./Anul%20II/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 - [Semestrul II](./Anul%20II/Semestrul%20II/)
   - [Materie 1](./Anul%20II/Semestrul%20II/Materie%201/)
   - [Materie 2](./Anul%20II/Semestrul%20II/Materie%202/)
   - [Materie 3](./Anul%20II/Semestrul%20II/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 
 ---
 
@@ -33,9 +48,14 @@
   - [Materie 1](./Anul%20III/Semestrul%20I/Materie%201/)
   - [Materie 2](./Anul%20III/Semestrul%20I/Materie%202/)
   - [Materie 3](./Anul%20III/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 - [Semestrul II](./Anul%20III/Semestrul%20II/)
   - [Materie 1](./Anul%20III/Semestrul%20II/Materie%201/)
   - [Materie 2](./Anul%20III/Semestrul%20II/Materie%202/)
   - [Materie 3](./Anul%20III/Semestrul%20II/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
+  - [Materie 3](./Anul%20I/Semestrul%20I/Materie%203/)
 
 ---
