@@ -39,5 +39,3 @@
   - [Materie 3](./Anul%20III/Semestrul%20II/Materie%203/)
 
 ---
-
-Fiecare link te va conduce direct la materialele corespunzătoare fiecărei materii. Explorează și inspiră-te!
