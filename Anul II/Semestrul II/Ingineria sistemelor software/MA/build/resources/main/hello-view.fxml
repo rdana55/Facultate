@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.iss.ma.controller.LoginController">
+  <children>
+    <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #e0d4cc, #7a706a);">
+      <children>
+        <TextField fx:id="unTextField" alignment="CENTER" layoutX="230.0" layoutY="150.0" promptText="username" />
+        <Button fx:id="login" layoutX="282.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleLogin" style="-fx-background-color: linear-gradient(to top, #7a706a, #e0d4cc); -fx-border-color: #342922; -fx-border-width: 1px;" textFill="#342922" text="Login" />
+        <Label layoutX="251.0" layoutY="80.0" prefHeight="50.0" prefWidth="107.0" text="LOGIN">
+          <font>
+            <Font size="34.0" />
+          </font>
+        </Label>
+        <PasswordField fx:id="psTextField" layoutX="230.0" layoutY="188.0" promptText="password" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

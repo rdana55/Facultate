@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom right, #ffffff, #ffffff);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.iss.ma.controller.AngajatController">
+    <children>
+        <AnchorPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #e0d4cc, #7a706a);">
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="70.0" text="Conectat la: " textFill="#8B4513" />
+                <Label fx:id="myLabel" layoutX="93.0" layoutY="14.0" prefHeight="25.0" prefWidth="267.0" text="intrare" textFill="#8B4513" />
+                <TableView fx:id="tableView" layoutX="14.0" layoutY="48.0" prefHeight="295.0" prefWidth="574.0" style="-fx-background-color: linear-gradient(to top, #e0d4cc, #7a706a); -fx-border-color: #342922; -fx-border-width: 1px;">
+                    <columns>
+                        <TableColumn fx:id="sarcinaColumn" prefWidth="343.33335399627686" style="-fx-text-fill: #8B4513;" text="Sarcina" />
+                        <TableColumn fx:id="statusColumn" prefWidth="228.6666259765625" style="-fx-text-fill: #8B4513;" text="Status" />
+                    </columns>
+                </TableView>
+                <Button fx:id="acceptaButton" layoutX="144.0" layoutY="354.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: linear-gradient(to top, #b9b7b6, #e0d4cc); -fx-border-color: #342922; -fx-border-width: 1px;" text="Accepta" textFill="#8B4513" />
+                <Button fx:id="finalizeazaButton" layoutX="338.0" layoutY="354.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: linear-gradient(to top, #b9b7b6, #e0d4cc); -fx-border-color: #342922; -fx-border-width: 1px;" text="Finalizeaza" textFill="#8B4513" />
+            <Button fx:id="logoutButton" layoutX="531.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(to top, #b9b7b6, #e0d4cc); -fx-border-color: #342922; -fx-border-width: 1px;" text="Logout" textFill="#8B4513" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
