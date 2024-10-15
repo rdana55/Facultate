@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liste</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h4>Modificati listele astfel incat sa se formeze doua grupuri de persoane.</h4>
+<select id="list1" class="person-list">
+  <option value="1">Maria</option>
+  <option value="2">Liviu</option>
+  <option value="3">Matei</option>
+  <option value="4">Sorana</option>
+  <option value="5">Andreea</option>
+  <option value="6">Stefan</option>
+  <option value="7">Iris</option>
+  <option value="8">Dragos</option>
+  <option value="9">Vlad</option>
+  <option value="10">Diana</option>
+</select>
+
+<select id="list2" class="person-list">
+</select>
+
+<script>
+$(document).ready(function(){
+  $('.person-list').on('dblclick', function(){
+    var $this = $(this);
+    var $selectedOption = $this.find('option:selected');
+    var targetId = $this.attr('id') === 'list1' ? 'list2' : 'list1';
+    var $targetSelect = $('#' + targetId);
+    
+    if ($selectedOption.length && !$targetSelect.find('option[value="' + $selectedOption.val() + '"]').length) {
+      $targetSelect.append($selectedOption.clone());
+      $selectedOption.remove();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

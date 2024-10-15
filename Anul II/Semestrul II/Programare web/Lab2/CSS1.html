@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div-uri centrate orizontal și vertical</title>
+<style>
+  .container {
+    border: 2px solid black; 
+    display: flex;
+    width: 400px;
+    
+    align-items: center; 
+    
+  }
+
+  .inner-left, .inner-right {
+    width: 200px; 
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .inner-right img {
+    max-width: 100%; 
+    max-height: 100%; 
+  }
+
+  .center-text {
+    text-align: center; 
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="inner-left">
+    <div class="center-text">
+      
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      <span class="repeat-text">mi-e pofta de pizza </span>
+      
+    </div>
+  </div>
+  <div class="inner-right">
+  
+    <img src="pizza.png" alt="Pizza delicioasă" />
+  </div>
+</div>
+
+</body>
+</html>

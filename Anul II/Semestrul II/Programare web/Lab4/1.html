@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liste</title>
+</head>
+<body>
+<h4>Modificati listele astfel incat sa se formeze doua grupuri de persoane.</h4>
+<select id="list1" ondblclick="moveItem('list1', 'list2')">
+  <option value="1">Maria</option>
+  <option value="2">Liviu</option>
+  <option value="3">Matei</option>
+  <option value="4">Sorana</option>
+  <option value="5">Andreea</option>
+  <option value="5">Stefan</option>
+  <option value="5">Iris</option>
+  <option value="5">Dragos</option>
+  <option value="5">Vlad</option>
+  <option value="5">Diana</option>
+</select>
+
+<select id="list2" ondblclick="moveItem('list2', 'list1')">
+</select>
+
+<script>
+function moveItem(sourceId, targetId) {
+  var sourceSelect = document.getElementById(sourceId);
+  var targetSelect = document.getElementById(targetId);
+  
+  var selectedOption = sourceSelect.options[sourceSelect.selectedIndex];
+  if (!selectedOption) return;
+  
+  var alreadyExists = Array.from(targetSelect.options).some(option => option.value === selectedOption.value);
+  if (alreadyExists) return;
+  
+  targetSelect.appendChild(selectedOption.cloneNode(true));
+  
+  sourceSelect.removeChild(selectedOption);
+}
+</script>
+
+</body>
+</html>

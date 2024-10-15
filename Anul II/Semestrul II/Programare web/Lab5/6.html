@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Puzzle</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        table,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        
+        td {
+            height: 50px;
+            min-width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable" style="width: 180px; margin-top: 1em;">
+    </table>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var empty, dim = 3;
+
+    $(document).ready(function() {
+        generateTable();
+        $(document).keydown(checkKey);
+    });
+
+    function generateTable() {
+        var elem;
+        var numbers = generateNumbers(dim * dim);
+        var output = "";
+        for (let i = 0; i < dim; i++) {
+            output += '<tr>';
+            for (let j = 0; j < dim; j++) {
+                output += `<td id='${i*dim+j}' >`;
+                elem = numbers.pop();
+                if (elem != dim * dim)
+                    output += elem;
+                else {
+                    empty = i * dim + j;
+                }
+                output += '</td>';
+            }
+            output += '</tr>';
+        }
+        $("#myTable").html(output);
+    }
+
+    function swap(id1, id2) {
+        let aux = $("#" + id1).html();
+        $("#" + id1).html($("#" + id2).html());
+        $("#" + id2).html(aux);
+        empty = id2;
+    }
+
+    function checkKey(e) {
+        if (e.keyCode == '38') {
+            if (empty - dim >= 0)
+                swap(empty, empty - dim);
+            else
+                alert('Miscare nepermisa in sus');
+        } else if (e.keyCode == '40') {
+            if (empty + dim <= dim * dim)
+                swap(empty, empty + dim);
+            else
+                alert('Miscare nepermisa in jos');
+        } else if (e.keyCode == '37') {
+            if (empty % dim != 0)
+                swap(empty, empty - 1);
+            else
+                alert('Miscare nepermisa la stanga');
+        } else if (e.keyCode == '39') {
+            if (empty % dim != dim - 1)
+                swap(empty, empty + 1);
+            else
+                alert('Miscare nepermisa la dreapta');
+        }
+    }
+
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    function generateNumbers(n) {
+        array = [];
+        for (let i = 1; i <= n; i++) {
+            array.push(i);
+        }
+        shuffle(array);
+        return array;
+    }
+</script>
+
+</html>

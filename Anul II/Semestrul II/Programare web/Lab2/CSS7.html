@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dialog cu Alice și Bob</title>
+<style>
+  .dialog {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 80%; 
+    max-width: 600px; 
+    margin: 20px auto; 
+    position: relative; 
+  }
+
+  .dialog li {
+    padding: 10px 20px; 
+    position: relative; 
+  }
+
+
+  .dialog .alice {
+    background-color: #ffe0cc;
+    border-radius: 15px; 
+    margin-bottom: 10px; 
+  }
+
+
+  .dialog .bob {
+    background-color: #cfe2ff; 
+    border-radius: 15px; 
+    margin-bottom: 10px;
+    text-align: right; 
+  }
+
+
+.dialog .alice::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px; 
+  background-image: url('copii.png'); 
+  background-position: 0 0; 
+  position: absolute;
+  top: -25px;
+  left: -65px; 
+}
+
+.dialog .bob::before {
+  content: "";
+  display: inline-block;
+  width: 50px; 
+  height: 50px; 
+  background-image: url('copii.png'); 
+  background-position: -50px 0; 
+  position: absolute;
+  top: -7px;
+  left: -65px;
+}
+
+.dialog .alice::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border: 9px solid transparent;
+  border-right-color: #ffe0cc;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -4.5px;
+  margin-left: -9px;
+}
+
+
+.dialog .bob::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border: 9px solid transparent;
+  border-right-color: #cfe2ff;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -4.5px;
+  margin-left: -9px;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<ul class="dialog">
+
+  <li class="alice">Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+
+  <li class="bob">Sed ut perspiciatis unde omnis iste nat us error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt</li>
+
+  <li class="alice">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</li>
+</ul>
+
+</body>
+</html>

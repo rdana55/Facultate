@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sortare</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <table id="myTable" style="width: 180px; margin-top: 1em;">
+        <tbody>
+            <tr>
+                <th onclick="sortTable(0,this)">Fructe</th>
+                <td>Mere</td>
+                <td>Pere</td>
+            </tr>
+            <tr>
+                <th onclick="sortTable(1,this)">Pret</th>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <th onclick="sortTable(2,this)">Cantitate</th>
+                <td>8</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table id="mySecondTable" style="width: 180px; margin-top: 1em;">
+        <tbody>
+            <tr>
+                <th onclick="sortTable2(0,this)">Fructe</th>
+                <th onclick="sortTable2(1,this)">Pret</th>
+                <th onclick="sortTable2(2,this)">Cantitate</th>
+            </tr>
+            <tr>
+                <td>Mere</td>
+                <td>3</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Pere</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function sortTable(n, x) {
+            console.log("Am intrat in sortTable");
+            var table, rows, switching, i, x, shouldSwitch, dir, switchcount = 0,
+                copie, idTable;
+            idTable = $(x).closest("table").attr("id");
+            table = $("#" + idTable);
+            switching = true;
+
+            dir = "asc";
+            while (switching) {
+
+                switching = false;
+
+                rows = table.find("tr");
+                x = rows.find("th, td").eq(n);
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    var currentCell = $(rows[i]).find("th, td").eq(n);
+                    var nextCell = $(rows[i + 1]).find("th, td").eq(n);
+                    if (dir == "asc") {
+                        if ($(currentCell).text().toLowerCase() > $(nextCell).text().toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if ($(currentCell).text().toLowerCase() < $(nextCell).text().toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (shouldSwitch) {
+                    for (var j = 0; j < rows.length; j++) {
+                        var currentRow = $(rows[j]).find("th, td").eq(n);
+                        var nextRow = $(rows[j + 1]).find("th, td").eq(n);
+                        copie = $(currentRow).html();
+                        $(currentRow).html($(nextRow).html());
+                        $(nextRow).html(copie);
+                    }
+
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        function sortTable2(n, x) {
+            console.log("Am intrat in sortTable");
+            var table, rows, switching, i, shouldSwitch, dir, switchcount = 0,
+                copie, idTable;
+            idTable = $(x).closest("table").attr("id");
+            table = $("#" + idTable);
+            switching = true;
+
+            dir = "asc";
+            while (switching) {
+
+                switching = false;
+
+                rows = table.find("tr");
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    var currentCell = $(rows[i]).find("th, td").eq(n);
+                    var nextCell = $(rows[i + 1]).find("th, td").eq(n);
+                    if (dir == "asc") {
+                        if ($(currentCell).text().toLowerCase() > $(nextCell).text().toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if ($(currentCell).text().toLowerCase() < $(nextCell).text().toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (shouldSwitch) {
+                    $(rows[i]).insertAfter($(rows[i + 1]));
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

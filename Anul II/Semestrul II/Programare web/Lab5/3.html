@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div#board {
+            width: 450px;
+            height: 340px;
+            padding: 24px;
+        }
+        
+        div#board>div {
+            border: pink 1px solid;
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin: 5px;
+            padding: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var valori = [];
+        var tile_ids = [];
+        var flipped = 0;
+        var variabile = ['1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6'];
+
+        Array.prototype.tile_shuffle = function() {
+            var i = this.length,
+                j, temp;
+            while (--i > 0) {
+                j = Math.floor(Math.random() * (i + 1));
+                temp = this[j];
+                this[j] = this[i];
+                this[i] = temp;
+            }
+        };
+
+        function FlipTile(tile, val) {
+            if (tile.innerHTML == "" && valori.length < 2) {
+                $(tile).css('background', 'lavender');
+                $(tile).html(val);
+                if (valori.length == 0) {
+                    valori.push(val);
+                    tile_ids.push(tile.id);
+                } else if (valori.length == 1) {
+                    valori.push(val);
+                    tile_ids.push(tile.id);
+                    if (valori[0] == valori[1]) {
+                        flipped += 2;
+                        valori = [];
+                        tile_ids = [];
+                        if (flipped == variabile.length) {
+                            alert("Jocul s-a sfarsit!");
+                            $('#board').empty();
+                            newPatrat();
+                        }
+                    } else {
+                        setTimeout(function() {
+                            $('#' + tile_ids[0]).css('background', 'pink').html("");
+                            $('#' + tile_ids[1]).css('background', 'pink').html("");
+                            valori = [];
+                            tile_ids = [];
+                        }, 700);
+                    }
+                }
+            }
+        }
+
+        function newPatrat() {
+            flipped = 0;
+            var output = '';
+            variabile.tile_shuffle();
+            for (var i = 0; i < variabile.length; i++) {
+                output += '<div id="tile_' + i + '"></div>';
+            }
+            $('#board').html(output);
+
+            $('#board div').click(function() {
+                var id = $(this).attr('id');
+                var val = variabile[parseInt(id.split('_')[1])];
+                FlipTile(this, val);
+            });
+        }
+
+        $(document).ready(function() {
+            newPatrat();
+        });
+    </script>
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <div id="board"></div>
+</body>
+
+</html>

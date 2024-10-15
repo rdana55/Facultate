@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validare Formular</title>
+<style>
+  .error {
+    border: 2px solid red;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form id="myForm">
+  <label for="name">Nume:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="birthdate">Data Nasterii:</label>
+  <input type="text" id="birthdate" name="birthdate" required><br><br>
+
+  <label for="age">Varsta:</label>
+  <input type="number" id="age" name="age" required><br><br>
+
+  <label for="email">Adresa de e-mail:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <button type="button" id="submitButton">Trimite</button>
+</form>
+
+<script>
+$(document).ready(function(){
+  $('#submitButton').click(function(){
+    var form = $('#myForm');
+    var name = form.find('#name').val().trim();
+    var birthdate = form.find('#birthdate').val();
+    var age = form.find('#age').val();
+    var email = form.find('#email').val().trim();
+    var errors = [];
+
+    if (name === '') {
+      errors.push('Numele trebuie completat.');
+      form.find('#name').addClass('error');
+    } else {
+      form.find('#name').removeClass('error');
+    }
+
+    var dateRegex = /^\d{4}-\d{2}-\d{2}$/; 
+    if (!dateRegex.test(birthdate)) {
+      errors.push('Data nasterii trebuie sa fie in formatul YYYY-MM-DD.');
+      form.find('#birthdate').addClass('error');
+    } else {
+      var selectedDate = new Date(birthdate);
+      var today = new Date();
+      if (selectedDate >= today) {
+        errors.push('Data nasterii trebuie sa fie in trecut.');
+        form.find('#birthdate').addClass('error');
+      } else {
+        form.find('#birthdate').removeClass('error');
+      }
+    }
+
+    if (isNaN(age) || age <= 0) {
+      errors.push('Varsta trebuie sa fie un numar pozitiv.');
+      form.find('#age').addClass('error');
+    } else {
+      form.find('#age').removeClass('error');
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      errors.push('Adresa de e-mail nu este valida.');
+      form.find('#email').addClass('error');
+    } else {
+      form.find('#email').removeClass('error');
+    }
+
+    if (errors.length > 0) {
+      var errorMessage = 'Campurile ';
+      for (var i = 0; i < errors.length; i++) {
+        errorMessage += errors[i];
+        if (i < errors.length - 1) {
+          errorMessage += ', ';
+        }
+      }
+      errorMessage += ' nu sunt completate corect.';
+      alert(errorMessage);
+    } else {
+      alert('Datele sunt completate corect! :)');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
