@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.clientfx.ZboruriController">
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ComboBox fx:id="comboFrom" layoutX="32.0" layoutY="23.0" prefWidth="150.0" promptText="from" />
+                <ComboBox fx:id="comboTo" layoutX="32.0" layoutY="65.0" prefWidth="150.0" promptText="to" />
+                <DatePicker fx:id="dataFlight" layoutX="20.0" layoutY="111.0" promptText="data" />
+                <Button fx:id="btn_Search" layoutX="81.0" layoutY="154.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+                <TableView fx:id="tabelZboruri" layoutX="233.0" layoutY="24.0" prefHeight="296.0" prefWidth="334.0">
+                    <columns>
+                        <TableColumn fx:id="columnPlecare" prefWidth="75.0" text="Plecare" />
+                        <TableColumn fx:id="columnSosire" prefWidth="75.0" text="Sosire" />
+                        <TableColumn fx:id="columnLocuri" prefWidth="121.33331298828125" text="Data/Ora" />
+                        <TableColumn fx:id="columnOcupate" prefWidth="44.0" text="Locuri" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <Button fx:id="cumpara" layoutX="32.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleCumpara" text="Cumpara" />
+            <TextField fx:id="client" layoutX="32.0" layoutY="317.0" promptText="client" />
+            <Button fx:id="logoutButton" layoutX="515.0" layoutY="361.0" mnemonicParsing="false"  text="Log Out" />
+            </children></Pane>
+    </children>
+</AnchorPane>
