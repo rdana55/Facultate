@@ -9,7 +9,7 @@
 
 ---
 
-## 🗂️ Structura
+## 🗂️ Structură
 
 ### [Anul I](./Anul%20I/)
 - [Semestrul I](./Anul%20I/Semestrul%20I/)
