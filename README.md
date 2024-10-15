@@ -4,7 +4,7 @@
 
 ## 🤝 Proiecte în echipă
 
-- [Hand Gesture Recognition](./Anul%20II/Semestrul%20I/Materie%201/)
+- [Hand Gesture Recognition](./Anul%20II/Semestrul%20II/Inteligenta%20artificiala/Hand%20Gesture%20Recognition/)
 - [SpeedCatch](./Anul%20III/Semestrul%20I/Materie%202/)
 
 ---
