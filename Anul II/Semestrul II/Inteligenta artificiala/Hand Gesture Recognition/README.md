@@ -28,7 +28,7 @@ This project demonstrates the potential of combining **computer vision** and **d
 
 ---
 
- **[video demonstration](#)**
+ **[video demonstration](https://youtu.be/sjO2bG0tRs0?si=mdiFwCZfTKFNwRWr)**
 
 ---
 
