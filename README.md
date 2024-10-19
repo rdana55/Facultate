@@ -1,4 +1,4 @@
-# 📚 Facultate
+# 📚 Facultate (in progress)
 
 ---
 
