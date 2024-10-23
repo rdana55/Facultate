@@ -9,7 +9,7 @@
 
 ---
 
-## 🗂️ Structură (doar link-urile pt. anul II sunt ok)
+## 🗂️ Structură (doar anul II contine materiale momentan)
 
 ### [Anul I](./Anul%20I/)
 - [Semestrul I](./Anul%20I/Semestrul%20I/)
