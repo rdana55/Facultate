@@ -33,7 +33,7 @@
   - [Metode Avansate de Programare](./Anul%20II/Semestrul%20I/Metode%20avansate%20de%20programare/)
   - [Programare Logică și Funcțională](./Anul%20II/Semestrul%20I/Programare%20logica%20si%20functionala/)
   - [Probabilități și Statistică](./Anul%20I/Semestrul%20I/Probabilitati%20si%20statistica/)
-  - [Rețele de Calculatoare !!! portofoliu superb](./Anul%20I/Semestrul%20I/Retele%20de%20calculatoare/)
+  - [Rețele de Calculatoare 📚 portofoliu complet](./Anul%20I/Semestrul%20I/Retele%20de%20calculatoare/)
 - [Semestrul II](./Anul%20II/Semestrul%20II/)
   - [Inteligență Artificială](./Anul%20II/Semestrul%20II/Inteligenta%20artificiala/)
   - [Ingineria Sistemelor Software](./Anul%20II/Semestrul%20II/Ingineria%20sistemelor%20software/)
