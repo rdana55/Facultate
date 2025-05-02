@@ -1,4 +1,4 @@
-# README - Servicii NSA (Obsidian)
+# Servicii NSA
 
 ## 1 Ubuntu Server
 
