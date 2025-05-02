@@ -1,6 +1,6 @@
 # Servicii NSA
 
-## 1 Ubuntu Server
+## 1. Ubuntu Server
 
 Ubuntu Server este sistemul de bază pe care au fost instalate unele dintre celelalte servicii. După descărcarea ISO-ului oficial, s-a creat o mașină virtuală în VirtualBox. După instalare, au fost adăugate serviciile web folosind Apache și MySQL. Aplicația web frontend a fost construită cu `npm run build` și mutată în `/var/www/html/victima`, cu permisiuni pentru utilizatorul `www-data`. Backend-ul (API-ul) a fost adăugat în subfolderul `/api`.
 
@@ -15,7 +15,7 @@ Fluxul general:
 
 ---
 
-## 2 Windows 10 
+## 2. Windows 10 
 
 Windows 10 a fost instalat ca mașină virtuală în VirtualBox folosind imaginea ISO oficială. S-a bifat opțiunea „Skip Unattended Installation”, deoarece nu s-a folosit un Product Key. După pornirea mașinii, s-au efectuat configurările inițiale necesare pentru a deveni client în rețea.
 
@@ -23,7 +23,7 @@ Utilizat ca și client pentru testarea partajărilor Samba
 
 ---
 
-## 3 SSH
+## 3. SSH
 
 SSH este serviciul care permite acces de la distanță la serverul Ubuntu.
 
@@ -38,7 +38,7 @@ Fluxul configurării:
 
 ---
 
-## 4 Proxy (Squid)
+## 4. Proxy (Squid)
 
 Squid este un proxy HTTP instalat pe Ubuntu pentru a redirecționa cererile HTTP din rețea.
 
@@ -52,7 +52,7 @@ Fluxul:
 
 ---
 
-## 5 Samba
+## 5. Samba
 
 Samba permite partajarea fișierelor între Ubuntu și Windows.
 
@@ -69,7 +69,7 @@ Aceste configurări asigură un partaj controlat și securizat între cele două
 
 ---
 
-## 6 Apache
+## 6. Apache
 
 Apache este serverul web principal instalat pe Ubuntu Desktop pentru a rula aplicația web.
 
@@ -86,7 +86,7 @@ Fluxul:
 
 ---
 
-## 7 DHCP
+## 7. DHCP
 
 DHCP este serviciul care oferă automat IP-uri pentru clienții din rețea.
 
@@ -102,7 +102,7 @@ Fluxul:
 
 ---
 
-## 8 DNS (BIND9)
+## 8. DNS (BIND9)
 
 DNS este serviciul care transformă nume în IP-uri.
 
@@ -118,7 +118,7 @@ Fluxul:
 
 ---
 
-##9 Docker
+## 9. Docker
 
 Docker permite rularea de aplicații izolate în containere.
 
@@ -132,7 +132,7 @@ Fluxul:
 
 ---
 
-## 10 FTP
+## 10. FTP
 
 FTP permite transferul de fișiere între client și server.
 
